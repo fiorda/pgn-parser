@@ -23,7 +23,7 @@ Qe7 10.Bxc4 Qxe4+ 11.Qe2 Qxe2+ 12.Bxe2 Na6
 parse = (gamestring) ->
   parsed = {}
   info  = /\[(\w+) "([^\"]*)"\]/g
-  moves = /\d+\. *((?:\w|-|=)+)[\+#!?]* *(?:\{([^\}]+)\})* ((?:\w|-)+|=)[\+#!?]* *(?:\{([^\}]+)\})*/g
+  moves = /\d+\. *((?:\w|-|=)+)[\+#!?]* *(?:\{([^\}]+)\})* ((?:\w|-|=)+)[\+#!?]* *(?:\{([^\}]+)\})*/g
 
   while (result = info.exec(gamestring))
       parsed[result[1]] = result[2]
