@@ -5,9 +5,10 @@ class Move
 
 
 parse = (gamestring) ->
+  gamestring = gamestring.replace(/(\r\n|\n|\r)/gm," ")
   parsed = {}
   info  = /\[(\w+) "([^\"]*)"\]/g
-  moves = /\d+\. *((?:\w|-|=)+)[\+#!?]* *(?:\{([^\}]+)\})* ((?:\w|-|=)+)[\+#!?]* *(?:\{([^\}]+)\})*/g
+  moves = /\d+\. *((?:\w|-|=)+)[\+#!?]? *(?:\{([^\}]+)\})? ((?:\w|-|=)+)[\+#!?]? *(?:\{([^\}]+)\})?/g
 
   while (result = info.exec(gamestring))
       parsed[result[1]] = result[2]
